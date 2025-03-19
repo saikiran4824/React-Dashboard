@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Search, Eye } from "lucide-react";
+import { Search} from "lucide-react";
 
 const orderData = [
 	{ id: "ORD001", customer: "John Doe", total: 235.4, status: "Delivered", date: "2023-07-01" },
@@ -38,7 +38,7 @@ const OrdersTable = () => {
 				<div className='relative'>
 					<input
 						type='text'
-						placeholder='Search orders...'
+						placeholder='Search by id or name...'
 						className='bg-gray-700 text-white placeholder-gray-400 rounded-lg pl-10 pr-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500'
 						value={searchTerm}
 						onChange={handleSearch}
@@ -66,9 +66,7 @@ const OrdersTable = () => {
 							<th className='px-6 py-3 text-left text-xs font-medium text-gray-400 uppercase tracking-wider'>
 								Date
 							</th>
-							<th className='px-6 py-3 text-left text-xs font-medium text-gray-400 uppercase tracking-wider'>
-								Actions
-							</th>
+							
 						</tr>
 					</thead>
 
@@ -105,11 +103,7 @@ const OrdersTable = () => {
 									</span>
 								</td>
 								<td className='px-6 py-4 whitespace-nowrap text-sm text-gray-300'>{order.date}</td>
-								<td className='px-6 py-4 whitespace-nowrap text-sm text-gray-300'>
-									<button className='text-indigo-400 hover:text-indigo-300 mr-2'>
-										<Eye size={18} />
-									</button>
-								</td>
+								
 							</motion.tr>
 						))}
 					</tbody>
